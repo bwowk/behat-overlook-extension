@@ -6,14 +6,14 @@
 ![Example](docs/img/example.png?raw=true)
 
 
-##Installing
+## Installing
 Do it with [composer](https://getcomposer.org/):
 
 ```bash
 composer require bwowk/behat-overlook-extension
 ```
 
-##Setting up
+## Setting up
 Just this will do:
 
 ```YAML
@@ -56,7 +56,5 @@ If there are other action steps (Given|When) after your failing Thens, they will
 The Overlook Extension makes it possible to run multiple assertions on the outcomes of a Scenario without fearing to have several steps obscured after one of them fails.
  
 This helps keeping your Scenarios on the line without a whole lot of redundancy. If your `Then` steps just test the outcomes of your scenario, they shouldn't affect the state which it reached by means of their `Given` and `When` steps, so why stop there?
-
-So if your Scenario
 
 It was inspired by [an old goodie from Google's testing blog](https://testing.googleblog.com/2008/07/tott-expect-vs-assert.html) on the importance of seeing more failures by test.
