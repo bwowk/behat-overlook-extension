@@ -1,0 +1,28 @@
+{
+  "name": "bwowk/behat-overlook-extension",
+  "description": "Behat extension to keep testing a Scenario outcomes after one of them fails.",
+  "minimum-stability": "stable",
+  "license": "GPL-3.0",
+  "authors": [
+    {
+      "name": "Bruno Nogueira Nascimento Wowk",
+      "email": "bruno.wowk@gmail.com"
+    }
+  ],
+  "require-dev": {
+    "symfony/process": "^3.3",
+    "phpspec/phpspec": "^3.4",
+    "phpunit/phpunit": "^6.2"
+  },
+  "require": {
+    "behat/behat": "^3.0"
+  },
+  "config": {
+    "bin-dir": "bin"
+  },
+  "autoload": {
+    "psr-4": {
+      "bwowk\\Behat\\OverlookExtension\\": "src/"
+    }
+  }
+}

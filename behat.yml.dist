@@ -1,0 +1,4 @@
+default:
+    extensions:
+        bwowk\Behat\OverlookExtension:
+            overlook_tag: overlook

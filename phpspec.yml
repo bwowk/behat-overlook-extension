@@ -1,0 +1,4 @@
+suites:
+    stepflow:
+        namespace: bwowk\Behat\OverlookExtension
+        psr4_prefix: bwowk\Behat\OverlookExtension
