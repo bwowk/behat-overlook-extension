@@ -28,7 +28,7 @@ class StepContainerTester
     {
         $overlook = false;
         if ($container instanceof ScenarioInterface){
-            $overlook = in_array($this->overlook_tag,$container->getTags());
+            $overlook = in_array($this->overlook_tag,array_merge($container->getTags(), $feature->getTags()));
         }
 
         $results = array();
