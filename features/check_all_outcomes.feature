@@ -72,6 +72,35 @@ Feature: Do not stop testing the outcomes of a scenario if one of the assertions
       4 steps (3 passed, 1 failed)
       """
 
+  Scenario: A scenario on a feature tagged @overlook should keep running "Then" steps after a "Then" step fails
+    Given there is a file named "features/keep_running.feature" with:
+      """
+      @overlook
+      Feature: Keep running
+        
+        Scenario: Keep Running steps
+          Given a passing step
+          When a step succeeds
+          Then a step should fail
+          But another step should succeed
+      """
+    When I run "behat features/keep_running.feature"
+    Then it should fail with:
+      """
+          Given a passing step            # FeatureContext::pass()
+            │ tested
+          When a step succeeds            # FeatureContext::pass()
+            │ tested
+          Then a step should fail         # FeatureContext::fail()
+            (Exception)
+          But another step should succeed # FeatureContext::pass()
+            │ tested
+      """
+    And the output should contain:
+      """
+      4 steps (3 passed, 1 failed)
+      """
+
   Scenario: A scenario tagged @overlook should only keep running "Then" steps after a "Then" step fails
     Given there is a file named "features/keep_running.feature" with:
     """
